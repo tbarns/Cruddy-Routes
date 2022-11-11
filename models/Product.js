@@ -24,13 +24,13 @@ Product.init(
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-      //VALIDATES TAHT VALUE IS A DECIMAL
+      isDecimal: true
     },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 10
-      //VALIDATES THAT VALUE IS A numeric
+      defaultValue: 10,
+      isNumeric: true
     },
     category_id: {
       type: DataTypes.INTEGER,
@@ -39,9 +39,8 @@ Product.init(
         key: 'id',
         unique: false
       }
-
-
     }
+
   },
   {
     sequelize,
